@@ -1,14 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "serve": "python -m SimpleHTTPServer 3003",
-    "test": "percy exec -- python3 ./tests/todo.py"
+    "serve": "python -m SimpleHTTPServer 8000",
+    "percy": "percy exec -- python ./tests/todo.py",
+    "test": "start-server-and-test serve http://localhost:8000 percy"
   },
   "dependencies": {
     "todomvc-app-css": "^2.2.0",
     "todomvc-common": "^1.0.2"
   },
   "devDependencies": {
-    "@percy/agent": "^0.20.11"
+    "@percy/agent": "^0.20.11",
+    "chromedriver": "^79.0.3",
+    "start-server-and-test": "^1.10.8"
   }
 }

@@ -1,17 +1,15 @@
 from selenium import webdriver
 from percy import percySnapshot
-from multiprocessing import Process
 from selenium.webdriver.common.keys import Keys
-from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
-def start_server():
-    httpd.serve_forever()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-extensions')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('--disable-setuid-sandbox')
+chrome_options.add_argument('--headless')
 
-server = Process(target=start_server)
-server.start()
-
-browser = webdriver.Firefox()
+browser = webdriver.Chrome(options=chrome_options)
 
 browser.get('http://localhost:8000')
 browser.implicitly_wait(10)
@@ -28,4 +26,3 @@ todoToggle.click()
 percySnapshot(browser=browser, name='Completed Todo')
 
 browser.quit()
-server.terminate()
