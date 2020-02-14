@@ -1,4 +1,6 @@
 # example-percy-python-selenium
+![Tests](https://github.com/percy/example-percy-python-selenium/workflows/Tests/badge.svg)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/percy/example-percy-python-selenium)
 
 Example app showing integration of [Percy](https://percy.io/) visual testing
 into Python Selenium tests.
