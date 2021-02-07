@@ -38,16 +38,22 @@ you've created the project, you'll be shown a token environment variable.
 
 In the shell window you're working in, export the token environment variable:
 
-#### Windows
-
-``` shell
-$ set PERCY_TOKEN=<your token here>
-```
-
 #### Unix
 
 ``` shell
-$ export PERCY_TOKEN=<your token here>
+$ export PERCY_TOKEN="<your token here>"
+```
+
+#### Windows
+
+``` shell
+$ set PERCY_TOKEN="<your token here>"
+```
+
+**PowerShell**
+
+``` powershell
+$ $Env:PERCY_TOKEN="<your token here>"
 ```
 
 Note: Usually this would only be set up in your CI environment, but to keep things simple we'll
