@@ -38,21 +38,18 @@ you've created the project, you'll be shown a token environment variable.
 
 In the shell window you're working in, export the token environment variable:
 
-#### Unix
+**Unix**
 
 ``` shell
 $ export PERCY_TOKEN="<your token here>"
 ```
 
-#### Windows
+**Windows**
 
 ``` shell
 $ set PERCY_TOKEN="<your token here>"
-```
 
-**PowerShell**
-
-``` powershell
+# PowerShell
 $ $Env:PERCY_TOKEN="<your token here>"
 ```
 
