@@ -1,28 +1,38 @@
-from selenium import webdriver
-from percy import percySnapshot
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+from threading import Thread
+from selenium.webdriver import Firefox, FirefoxOptions
 from selenium.webdriver.common.keys import Keys
+from percy import percy_snapshot
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-extensions')
-chrome_options.add_argument('--disable-dev-shm-usage')
-chrome_options.add_argument('--disable-setuid-sandbox')
-chrome_options.add_argument('--headless')
+# start the example app in another thread
+httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+thread = Thread(target=httpd.serve_forever)
+thread.setDaemon(True)
+thread.start()
 
-browser = webdriver.Chrome(options=chrome_options)
+# launch firefox headless
+ff_options = FirefoxOptions()
+ff_options.add_argument('-headless')
+browser = Firefox(options=ff_options)
 
+# go to the example app
 browser.get('http://localhost:8000')
 browser.implicitly_wait(10)
 
-newTodoInput = browser.find_element_by_class_name('new-todo')
-percySnapshot(browser=browser, name='Empty Todo State')
+# snapshot empty state
+percy_snapshot(browser, 'Empty Todo State')
 
-newTodoInput.send_keys('Try Percy')
-newTodoInput.send_keys(Keys.ENTER)
-percySnapshot(browser=browser, name='With a Todo')
+# snapshot with a new todo
+new_todo_input = browser.find_element_by_class_name('new-todo')
+new_todo_input.send_keys('Try Percy')
+new_todo_input.send_keys(Keys.ENTER)
+percy_snapshot(browser, 'With a Todo')
 
-todoToggle = browser.find_element_by_class_name('toggle')
-todoToggle.click()
-percySnapshot(browser=browser, name='Completed Todo')
+# snapshot with a completed todo
+todo_toggle = browser.find_element_by_class_name('toggle')
+todo_toggle.click()
+percy_snapshot(browser, 'Completed Todo')
 
+# clean up
 browser.quit()
+httpd.shutdown()
