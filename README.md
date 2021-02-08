@@ -86,7 +86,7 @@ like this:
 <button class="clear-completed"><strong>Clear completed</strong></button>
 ```
 
-### Step 7
+### Step 6
 
 Commit the change:
 
@@ -94,7 +94,7 @@ Commit the change:
 $ git commit -am "Emphasize 'Clear completed' button"
 ```
 
-### Step 8
+### Step 7
 
 Run the tests with snapshots again:
 
@@ -108,7 +108,7 @@ will be uploaded to Percy and compared with the previous snapshots, showing any 
 At the end of the test run output, you will see logs from Percy confirming that the snapshots were
 successfully uploaded and giving you a direct URL to check out any visual diffs.
 
-### Step 9
+### Step 8
 
 Visit your project in Percy and you'll see a new build with the visual comparisons between the two
 runs. Click anywhere on the Build 2 row. You can see the original snapshots on the left, and the new
