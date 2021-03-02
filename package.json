@@ -1,8 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "todomvc-app-css": "^2.3.0",
-    "todomvc-common": "^1.0.5"
+    "todomvc-app-css": "^2.3.0"
   },
   "devDependencies": {
     "@percy/cli": "^1.0.0-beta.39",
