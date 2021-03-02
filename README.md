@@ -75,11 +75,12 @@ yet. You'll see that Percy shows you that these snapshots come from your `tutori
 
 ### Step 5
 
-Use your text editor to edit `index.html` and introduce some visual changes. For example, you can add a
-`bold` class to the "Clear completed" button classes on line 33. After the change, that line looks like this:
+Use your text editor to edit `index.html` and introduce some visual changes. For example, you can
+add inline CSS to bold the "Clear completed" button on line 32. After the change, that line looks
+like this:
 
 ``` html
-<button class="clear-completed bold">Clear completed</button>
+<button class="clear-completed" style="font-weight:bold">Clear completed</button>
 ```
 
 ### Step 6
