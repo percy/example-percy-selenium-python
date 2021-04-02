@@ -16,7 +16,7 @@ $(VENV)/$(MARKER): $(VENVDEPS) | $(VENV)
 $(NPM): $(NPMDEPS)
 	npm install
 
-.PHONY: venv npm install clean serve snapshot
+.PHONY: venv npm install clean serve test
 
 venv: $(VENV)/$(MARKER)
 npm: $(NPM)
