@@ -13,7 +13,7 @@ thread.start()
 # launch firefox headless
 ff_options = FirefoxOptions()
 ff_options.add_argument('-headless')
-browser = Firefox(options=ff_options)
+browser = Firefox(executable_path="/Users/yatinsatija/Desktop/BSLocal/geckodriver",options=ff_options)
 
 # go to the example app
 browser.get('http://localhost:8000')
