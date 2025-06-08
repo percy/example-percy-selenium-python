@@ -10,7 +10,7 @@ jobs:
           python-version: 3.x
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 18
       - uses: actions/cache@v3
         with:
           path: ~/.cache/pip
@@ -19,8 +19,8 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: v1/${{ runner.os }}/node-12/${{ hashFiles('**/package-lock.lock') }}
-          restore-keys: v1/${{ runner.os }}/node-12/
+          key: v1/${{ runner.os }}/node-18/${{ hashFiles('**/package-lock.lock') }}
+          restore-keys: v1/${{ runner.os }}/node-18/
       - name: Run tests
         uses: percy/exec-action@v0.3.1
         with:
