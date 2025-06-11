@@ -27,7 +27,7 @@ clean:
 	rm -rf $$(cat .gitignore)
 
 serve:
-	$(VENV)/python33 -m http.server 8000
+	$(VENV)/python3 -m http.server 8000
 
 test: install
 	$(NPM)/percy exec -- $(VENV)/python3 tests/todo.py
