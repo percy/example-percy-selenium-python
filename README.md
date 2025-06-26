@@ -29,7 +29,7 @@ $ make install
 The example app and it's tests will now be ready to go. You can explore the app by running `make
 serve` and then opening `localhost:8000` in a browser.
 
-### Step 2
+### Step 2:
 
 Sign in to Percy and create a new project. You can name the project "todo" if you'd like. After
 you've created the project, you'll be shown a token environment variable.
