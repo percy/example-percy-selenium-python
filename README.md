@@ -16,7 +16,7 @@ we won't spend time introducing concepts.
 
 This tutorial also assumes you have Python 3, Node, Make, and git installed.
 
-### Step 1
+### Step 1:
 
 Clone the example application and install dependencies:
 
