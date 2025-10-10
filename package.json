@@ -1,10 +1,10 @@
 {
   "private": true,
   "dependencies": {
-    "todomvc-app-css": "^2.3.0"
+    "todomvc-app-css": "^2.4.3"
   },
   "devDependencies": {
-    "@percy/cli": "^1.30.11",
-    "geckodriver": "^1.21.1"
+    "@percy/cli": "^1.31.2",
+    "geckodriver": "^6.0.2"
   }
 }

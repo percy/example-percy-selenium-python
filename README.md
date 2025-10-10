@@ -5,6 +5,13 @@
 Example app showing integration of [Percy](https://percy.io/) visual testing
 into Python Selenium tests.
 
+Note: Dependencies were reviewed and updated on 2025-10-10. Key updates:
+- `geckodriver` -> 6.0.2
+- `selenium` -> >=4.36.0
+- `requests` -> >=2.32.5
+- `@percy/cli` remains at ^1.31.2 (no newer release found)
+
+
 Based on the [TodoMVC](https://github.com/tastejs/todomvc) [VanillaJS](https://github.com/tastejs/todomvc/tree/master/examples/vanillajs)
 app, forked at commit [4e301c7014093505dcf6678c8f97a5e8dee2d250](https://github.com/tastejs/todomvc/tree/4e301c7014093505dcf6678c8f97a5e8dee2d250).
 
