@@ -4,6 +4,21 @@
 		<meta charset="utf-8">
 		<title>VanillaJS • TodoMVC</title>
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<style>
+			.clear-completed {
+				background: #ff4757;
+				color: #fff;
+				padding: 8px 12px;
+				border-radius: 6px;
+				border: none;
+				box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+				cursor: pointer;
+				font-weight: 700;
+			}
+			.clear-completed:hover {
+				background: #ff6b81;
+			}
+		</style>
 	</head>
 	<body>
 		<section class="todoapp">
@@ -29,7 +44,7 @@
 						<a href="#/completed">Completed</a>
 					</li>
 				</ul>
-				<button class="clear-completed" style="font-weight:bold">Clear completed</button>
+				<button class="clear-completed">🧹 Clear Completed</button>
 			</footer>
 		</section>
 		<footer class="info">

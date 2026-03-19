@@ -22,20 +22,15 @@ browser = Firefox(options=ff_options)
 # go to the example app
 browser.get('http://localhost:8000')
 browser.implicitly_wait(10)
-
-# snapshot empty state
-percy_snapshot(browser, 'Empty Todo State')
-
-# snapshot with a new todo
+# perform actions: add a todo and mark it completed
 new_todo_input = browser.find_element(By.CLASS_NAME, 'new-todo')
 new_todo_input.send_keys('Try Percy')
 new_todo_input.send_keys(Keys.ENTER)
-percy_snapshot(browser, 'With a Todo')
-
-# snapshot with a completed todo
 todo_toggle = browser.find_element(By.CLASS_NAME, 'toggle')
 todo_toggle.click()
-percy_snapshot(browser, 'Completed Todo')
+
+# single Percy snapshot for the final state
+percy_snapshot(browser, 'Final Todo State')
 
 # clean up
 browser.quit()
