@@ -1,42 +1,59 @@
-# PER-8195 Phase 1 — Selenium-Python matrix-row mapping (STUB).
-# Test code in tests/advanced.py — TO BE WRITTEN.
+# PER-8195 Phase 1 — Selenium-Python matrix-row mapping.
+# Test code: tests/test_todomvc_advanced.py (pytest).
 
 sdk: selenium-python
 package: percy-selenium
 language: python
 sdk_min_version: '2.1.2'
-cli_min_version: '1.31.10'
+cli_min_version: '1.31.13'
 
 rows:
   - id: widths
-    state: planned
-    test: 'TodoMVC Advanced > exercises widths'
+    state: covered
+    test: 'test_exercises_widths'
   - id: min_height
-    state: planned
-    test: 'TodoMVC Advanced > exercises minHeight'
+    state: covered
+    test: 'test_exercises_min_height'
   - id: enable_javascript
-    state: planned
-    test: 'TodoMVC Advanced > exercises enable_javascript'
+    state: covered
+    test: 'test_exercises_enable_javascript'
   - id: responsive_snapshot_capture
-    state: planned
-    test: 'TodoMVC Advanced > exercises responsive_snapshot_capture (also via camelCase alias)'
+    state: covered
+    test: 'test_exercises_responsive_snapshot_capture'
   - id: readiness_preset
-    state: planned
-    test: 'TodoMVC Advanced > exercises readiness preset (balanced, strict, disabled)'
+    state: covered
+    test: 'test_exercises_readiness_preset'
   - id: sync
-    state: planned
-    test: 'TodoMVC Advanced > exercises sync option'
+    state: covered
+    test: 'test_exercises_sync'
   - id: percy_css
-    state: planned
-    test: 'TodoMVC Advanced > exercises percyCSS via .percy.yml'
+    state: covered
+    test: 'global via .percy.yml snapshot.percy-css'
+  - id: labels
+    state: covered
+    test: 'test_exercises_labels'
+  - id: test_case
+    state: covered
+    test: 'test_exercises_test_case'
+  - id: device_pixel_ratio
+    state: covered
+    test: 'test_exercises_device_pixel_ratio'
+  - id: browsers
+    state: covered
+    test: 'test_exercises_browsers'
 
   # Python-specific.
   - id: snake_case_camelcase_dual_naming
-    state: planned
-    test: 'TodoMVC Advanced > exercises both responsive_snapshot_capture and responsiveSnapshotCapture (same option, dual naming)'
+    state: covered
+    test: 'test_exercises_snake_case_camelcase_dual_naming'
   - id: cross_origin_iframe_handling
     state: covered
     test: 'automatic via percy-selenium >= 2.1.2'
+
+  - id: disable_shadow_dom
+    state: planned
+  - id: enable_layout
+    state: planned
 
   # Options not exposed as kwargs in percy-selenium (per SDK source).
   - id: scope
@@ -52,27 +69,12 @@ rows:
     state: n_a
     reason: 'discovery is per-build, not per-snapshot in this SDK.'
 
-  - id: labels
-    state: planned
-  - id: test_case
-    state: planned
-  - id: device_pixel_ratio
-    state: planned
-  - id: browsers
-    state: planned
-  - id: disable_shadow_dom
-    state: planned
-  - id: enable_layout
-    state: planned
-
   - id: env_percy_server_address
-    state: planned
-    test: 'CI: advanced job sets PERCY_SERVER_ADDRESS via env (Python reads PERCY_CLI_API)'
+    state: covered
+    test: 'CI: advanced job sets PERCY_SERVER_ADDRESS via env'
   - id: percy_yml_global_config
-    state: planned
+    state: covered
     test: 'global config consumed via .percy.yml'
   - id: environment_info_reporting
     state: covered
     test: 'automatic via percy-selenium client info'
-
-# Pre-existing basic-example coverage (tests/todo.py): three bare percy_snapshot calls. Also tests/readiness.py exercises readiness preset (balanced, disabled, balanced+timeoutMs).
