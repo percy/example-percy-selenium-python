@@ -22,8 +22,6 @@ jobs:
           key: v1/${{ runner.os }}/node-18/${{ hashFiles('**/package-lock.lock') }}
           restore-keys: v1/${{ runner.os }}/node-18/
       - name: Run tests
-        uses: percy/exec-action@v0.3.1
-        with:
-          custom-command: "make test"
+        run: make test
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
